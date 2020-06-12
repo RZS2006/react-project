@@ -1,9 +1,9 @@
 import React from 'react'
 
-export class Footer extends React.Component {
+export class ListFooter extends React.Component {
     render() {
         return (
-            <div className="footer">
+            <div className="list-footer">
                 <div className="footer-numbers">
                     <span className="grandtotal-container">Grand Total: 45.34€</span>
                     <span className="itemamount-container">Total Items: 3</span>

@@ -1,3 +1,28 @@
+/* --- React Shopping App --- */
+
+/* Import "Roboto" Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+/* Base */
+
+:root {
+  --green: rgb(8, 230, 0);
+  --green-hover: rgb(0, 201, 0);
+  --grey: rgb(225, 225, 225);
+  --grey-hover: rgb(210, 210, 210);
+  --grey-light: rgb(235, 235, 235);
+  --grey-text: rgb(60, 60, 60);
+  --grey-shadow: rgba(0, 0, 0, 0.1);
+  --red: rgb(241, 34, 34);
+  --red-hover: rgb(206, 29, 29);
+  --yellow: rgb(255, 251, 32);
+  --yellow-hover: rgb(231, 228, 28);
+
+  --fw-regular: 400;
+  --fw-semibold: 600;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,5 +35,298 @@ html {
 
 body {
   background-color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
+
+.container {
+  width: 85%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+button, input[type="submit"] {
+  cursor: pointer;
+  border: none;
+}
+
+button:hover, input[type="submit"]:hover {
+  transition: 0.2s;
+}
+
+/* Components */
+
+  /* Header */
+
+  .header {
+    padding: 5.4rem;
+    text-align: center;
+    background-color: var(--green);
+  }
+
+  .header h1 {
+    font-size: 4.8rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .header h2 {
+    font-size: 2.2rem;
+    font-weight: var(--fw-regular);
+  }
+
+  /* Main */
+
+  .main {
+    background-color: var(--grey-light);
+    padding: 2rem;
+  }
+
+    /* Input Form */
+
+    .input-form {
+      background-color: var(--grey);
+      border-radius: 0.6rem;
+      padding: 4rem 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .form {
+      display: flex;
+    }
+
+    .input.long {
+      flex: 2;
+      margin-right: 1rem;
+    }
+
+    .input.short {
+      flex: 1;
+      margin-right: 1rem;
+    }
+
+    .input-label {
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .input-field {
+      width: 100%;
+      height: 3.6rem;
+      padding: 0.6rem;
+      font-size: 1.4rem;
+    }
+
+    .submit-btn {
+      width: 100px;
+      height: 3.6rem;
+      align-self: flex-end;
+      font-size: 1.4rem;
+      background-color: var(--green);
+    }
+
+    .submit-btn:hover {
+      background-color: var(--green-hover);
+    }
+
+    /* Shopping List */
+
+    .list-item {
+      background-color: white;
+      box-shadow: 0 5px 10px var(--grey-shadow);
+      padding: 2rem;
+      margin-bottom: 1rem;
+      border-radius: 0.6rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .completed-checkbox {
+      height: 1.8rem;
+      width: 1.8rem;
+      margin-right: 2rem;
+    }
+
+    .item-name {
+      font-size: 1.8rem;
+      margin-right: 2rem;
+    }
+
+    .item-price {
+      font-size: 1.6rem;
+      color: var(--grey-text);
+      margin-right: 4rem;
+    }
+
+    .quantity-container {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      margin-right: 2rem;
+    }
+
+    .decrement-btn, .increment-btn {
+      height: 2.6rem;
+      width: 2.6rem;
+      font-size: 1.6rem;
+      background-color: var(--grey);
+    }
+
+    .decrement-btn:hover , .increment-btn:hover {
+      background-color: var(--grey-hover);
+    }
+
+    .item-quantity {
+      font-size: 1.8rem;
+      margin: 0 1rem;
+    }
+
+    .item-subtotal {
+      margin-left: auto;
+      margin-right: 0;
+      font-size: 1.6rem;
+      color: var(--grey-text);
+    }
+
+    .delete-btn {
+      margin-left: 4rem;
+      margin-right: 0;
+      height: 3rem;
+      width: 3rem;
+      color: white;
+      background-color: var(--red);
+      border-radius: 50%;
+      font-weight: var(--fw-semibold);
+    }
+
+    .delete-btn:hover {
+      background-color: var(--red-hover);
+    }
+
+    /* List Footer */
+
+    .list-footer {
+      padding: 2rem;
+      display: flex;
+    }
+
+    .footer-numbers {
+      display: flex;
+      align-items: center;
+    }
+
+    .grandtotal-container {
+      margin-right: 4rem;
+      font-weight: var(--fw-semibold);
+      font-size: 2.2rem;
+      padding-bottom: 0.6rem;
+      border-bottom: black 3px solid;
+    }
+
+    .itemamount-container,  .uncomplete-container {
+      margin-right: 2rem;
+      font-size: 1.6rem;
+      color: var(--grey-text);
+    }
+
+    .footer-filter {
+      margin-left: 3rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .hide-completed-checkbox {
+      height: 1.8rem;
+      width: 1.8rem;
+      margin-right: 1rem;
+    }
+
+    .hide-completed-label {
+      font-size: 1.4rem;
+      margin-right: 2rem;
+    }
+
+    .delete-completed-btn, .delete-all-btn {
+      margin-right: 2rem;
+      padding: 0.6rem 1.2rem;
+      font-size: 1.4rem;
+    }
+
+    .delete-completed-btn {
+      background-color: var(--yellow);
+    }
+
+    .delete-completed-btn:hover {
+      background-color: var(--yellow-hover);
+    }
+
+    .delete-all-btn {
+      background-color: var(--red);
+      color: white;
+    }
+
+    .delete-all-btn:hover {
+      background-color: var(--red-hover);
+    }
+
+  /* Media Queries */
+
+  @media screen and (max-width: 1280px) {
+    .list-footer {
+      flex-direction: column;
+    }
+
+    .footer-numbers {
+      margin-bottom: 2rem;
+    }
+
+    .footer-filter {
+      margin-left: 0;
+    }
+  }
+
+  @media screen and (max-width: 840px) {
+    .form {
+      flex-direction: column;
+    }
+
+    .input, .submit-btn {
+      margin-right: 0;
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+
+    .submit-btn {
+      margin-top: 2rem;
+      align-self: flex-start;
+    }
+
+    .item-subtotal {
+      display: none;
+    }
+
+    .delete-btn {
+      margin-left: auto;
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    html {
+      font-size: 60%;
+    }
+
+    .list-item {
+      flex-wrap: wrap;
+    }
+
+    .list-item > * {
+      margin-bottom: 1rem;
+    }
+
+    .footer-numbers, .footer-filter {
+      flex-wrap: wrap;
+    }
+
+    .footer-numbers > *, .footer-filter > * {
+      margin-bottom: 1rem;
+    }
+  }
