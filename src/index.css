@@ -86,7 +86,6 @@ button:hover, input[type="submit"]:hover {
       background-color: var(--grey);
       border-radius: 0.6rem;
       padding: 4rem 2rem;
-      margin-bottom: 4rem;
     }
 
     .form {
@@ -130,14 +129,26 @@ button:hover, input[type="submit"]:hover {
 
     /* Shopping List */
 
+    .shopping-list {
+      margin-top: 4rem
+    }
+
     .list-item {
       background-color: white;
       box-shadow: 0 5px 10px var(--grey-shadow);
       padding: 2rem;
-      margin-bottom: 1rem;
+      margin-top: 1rem;
       border-radius: 0.6rem;
       display: flex;
       align-items: center;
+    }
+
+    .list-item.completed {
+      background-color: var(--grey-light);
+    }
+
+    .list-item.completed .item-name {
+      text-decoration: line-through;
     }
 
     .completed-checkbox {
@@ -205,6 +216,7 @@ button:hover, input[type="submit"]:hover {
     /* List Footer */
 
     .list-footer {
+      margin-top: 2rem;
       padding: 2rem;
       display: flex;
     }
@@ -312,6 +324,10 @@ button:hover, input[type="submit"]:hover {
   @media screen and (max-width: 720px) {
     html {
       font-size: 60%;
+    }
+
+    .container {
+      width: 100%;
     }
 
     .list-item {

@@ -27,7 +27,12 @@ export class InputForm extends React.Component {
 
         const {itemName, itemPrice, itemQuantity} = this.state;
         if (!itemName || !itemPrice || !itemQuantity) return 
-        this.props.addListItem([itemName, itemPrice, itemQuantity]);
+        this.props.onFormSubmit([itemName, itemPrice, itemQuantity]);
+
+        this.setState({
+            itemName: "",
+            itemPrice: "",
+            itemQuantity: "" });
     }
 
     render() {
@@ -49,7 +54,7 @@ export class InputForm extends React.Component {
                         <label htmlFor="itemPrice" className="input-label">Item Price</label>
 
                         <input name="itemPrice" 
-                               type="number" step="0.01" min="0" max="10000" // 0 - 10 000
+                               type="number" step="0.01" min="0.01" max="10000" // 0.01 - 10 000
                                className="input-field"
                                value= {this.state.itemPrice}
                                onChange= {this.handleInputChange} />
