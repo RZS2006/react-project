@@ -2,9 +2,6 @@ import React from 'react'
 import { ListItem } from "./ListItem"
 
 export class ShoppingList extends React.Component {
-    // constructor(props) {
-    //     super(props)
-    // }
 
     render() {
     const { listItems, hideCompleted } = this.props;

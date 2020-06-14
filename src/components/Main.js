@@ -8,10 +8,16 @@ import { ListFooter } from "./ListFooter"
 export class Main extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            listItems: [],
-            hideCompleted: false
-        };
+        
+        const cachedState = localStorage.getItem("state");
+        if (cachedState) {
+            this.state = JSON.parse(cachedState);
+        } else {
+            this.state = {
+                listItems: [],
+                hideCompleted: false
+            };
+        }
 
         this.addListItem = this.addListItem.bind(this);
         this.toggleCompleted = this.toggleCompleted.bind(this);
@@ -20,6 +26,10 @@ export class Main extends React.Component {
         this.toggleHideCompletedListItems = this.toggleHideCompletedListItems.bind(this);
         this.deleteCompletedListItems = this.deleteCompletedListItems.bind(this);
         this.deleteAllListItems = this.deleteAllListItems.bind(this);
+    }
+    
+    componentDidUpdate() {
+        localStorage.setItem("state", JSON.stringify(this.state))
     }
 
     addListItem(itemData) {

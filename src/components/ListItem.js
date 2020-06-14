@@ -1,9 +1,6 @@
 import React from 'react'
 
 export class ListItem extends React.Component {
-    // constructor(props) {
-    //     super(props)
-    // }
 
     render() {
         let { id, name, price, quantity, completed } = this.props.listItem;

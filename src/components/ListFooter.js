@@ -1,9 +1,6 @@
 import React from 'react'
 
 export class ListFooter extends React.Component {
-    // constructor(props) {
-    //     super(props)
-    // }
 
     render() {
         const { listItems } = this.props;
@@ -28,18 +25,17 @@ export class ListFooter extends React.Component {
                     </div>
 
                     <div className="footer-filter">
-                        {uncompletedListItems > 0 && 
-                            <React.Fragment>
-                                <input name="hide-completed-checkbox"
-                                    type="checkbox"
-                                    className="hide-completed-checkbox"
-                                    checked={this.props.hideCompleted}
-                                    onChange={this.props.onHideCompletedCheckboxChange} />
-                                <label htmlFor="hide-completed-checkbox" className="hide-completed-label">Hide Completed</label>
-                                
-                                <button className="delete-completed-btn"
-                                        onClick={this.props.onDeleteCompletedBtnClick}>Delete Completed</button>
-                            </React.Fragment>
+                        {uncompletedListItems < totalListItems &&
+                        <React.Fragment>
+                            <input name="hide-completed-checkbox"
+                                type="checkbox"
+                                className="hide-completed-checkbox"
+                                checked={this.props.hideCompleted}
+                                onChange={this.props.onHideCompletedCheckboxChange} />
+                            <label htmlFor="hide-completed-checkbox" className="hide-completed-label">Hide Completed</label> 
+                            <button className="delete-completed-btn"
+                                    onClick={this.props.onDeleteCompletedBtnClick}>Delete Completed</button>
+                        </React.Fragment>
                         }
 
                         <button className="delete-all-btn"
